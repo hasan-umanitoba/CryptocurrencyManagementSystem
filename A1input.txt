@@ -1,0 +1,242 @@
+# create four investors
+NEW Investor One invone 1000
+NEW Investor Two invtwo 1000
+NEW Investor Three invthree 1000
+NEW Investor Four invfour 0
+# attempt to create duplicate investor
+NEW I Nvone invone 1000
+# create five cryptocurrencies
+CRYPTO CRYPTO1 CRY1 1000
+CRYPTO CRYPTO2 CRY2 1000
+CRYPTO CRYPTO3 CRY3 1000
+CRYPTO CRYPTO4 CRY4 1000
+CRYPTO CRYPTO5 CRY5 1000
+# attempt to create duplicate cryptocurrency
+CRYPTO CRYPTO55 CRY5 0
+# successful mines
+MINE invone CRY1 500
+MINE invtwo CRY1 400
+MINE invtwo CRY5 10
+MINE invone CRY2 1000
+MINE invthree CRY3 100
+MINE invthree CRY3 200
+MINE invtwo CRY3 200
+MINE invone CRY5 10
+# investor not found
+MINE notfound CRY1 99
+# currency not found
+MINE invone CRY6 1
+# insufficient funds - CRY4
+MINE invthree CRY4 1001
+# insufficient funds - CRY1
+MINE invone CRY1 101
+# trade - currency not found - CRY7
+TRADE invone invtwo CRY1 100 CRY7 100
+# trade - investor not found - invten
+TRADE invone invten CRY1 100 CRY5 100
+# trade - multiple not founds - only needs to detect one
+TRADE invten invnine CRY9 100 CRY8 100
+# trade - insufficient funds for one investor - held
+TRADE invone invtwo CRY1 1000 CRY5 10
+# trade - insufficient funds for one investor - not held
+TRADE invone invtwo CRY4 100 CRY5 10
+# trade - insufficient funds for both investors - held - only needs to detect one
+TRADE invone invtwo CRY1 1000 CRY5 20
+# trade - insufficient funds for both investors - not held - only needs to detect one
+TRADE invone invthree CRY4 1000 CRY5 1000
+# trade - insufficient CAD
+TRADE invone invtwo CRY1 499 CAD 10000
+# trade - same trader
+TRADE invone invone CRY1 100 CRY1 1
+# trade - multiple errors - only needs to report one
+TRADE invten invone CRY9 1000 CRY9 0
+# successful trade - both cryptos, both new
+TRADE invone invtwo CRY2 100 CRY3 100
+# successful trade - both cryptos, both existing
+TRADE invone invtwo CRY1 100 CRY5 5
+# successful trade - one CAD - new currency
+TRADE invone invthree CRY1 200 CAD 500
+# successful trade - one CAD - existing currency
+TRADE invone invtwo CRY1 100 CAD 500
+# successful trade - both cryptos same
+TRADE invone invtwo CRY1 100 CRY1 101
+# some .. uh .. more trades.
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+TRADE invone invtwo CRY1 101 CRY1 100
+TRADE invone invtwo CRY1 100 CRY1 101
+# successful trade - investor is traded out of a currency
+TRADE invone invthree CRY1 100 CRY3 300
+# nonexistent crypto report
+CRYPORT CRY9
+# report all cryptos
+CRYPORT CRY1
+CRYPORT CRY2
+CRYPORT CRY3
+CRYPORT CRY4
+CRYPORT CRY5
+# nonexistent report investor
+REPORT invteen 
+# report all investors
+REPORT invone
+REPORT invtwo
+REPORT invthree
+REPORT invfour
+# END
+END
